@@ -1,0 +1,24 @@
+[project]
+name = "crypto-data"
+version = "1.0.0"
+description = "A datapipeline for automatically processing crypto data"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{"name" = "Satrya"}]
+
+[tool.poetry]
+packages = [
+    { include = "crypto-data", from = "src" }
+]
+
+[tool.poetry.dependencies]
+boto3 = "^1.38.22"
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^4.4.2"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.meta"
+
+[project.scripts]

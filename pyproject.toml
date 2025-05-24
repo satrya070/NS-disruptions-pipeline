@@ -8,7 +8,7 @@ authors = [{"name" = "Satrya"}]
 
 [tool.poetry]
 packages = [
-    { include = "crypto-data", from = "src" }
+    { include = "crypto_data", from = "src" }
 ]
 
 [tool.poetry.dependencies]

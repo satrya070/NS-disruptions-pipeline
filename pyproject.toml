@@ -19,6 +19,7 @@ streamlit = "^1.45.1"
 
 [tool.poetry.group.dev.dependencies]
 jupyterlab = "^4.4.2"
+sqlalchemy = "^2.0.41"
 
 [build-system]
 requires = ["setuptools"]

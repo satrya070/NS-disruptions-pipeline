@@ -4,6 +4,8 @@ import json
 
 from dotenv import load_dotenv
 from crypto_data.interfaces.crypto_api import CryptoAPI
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 load_dotenv()
 
@@ -58,7 +60,9 @@ class CoinGeckoAPI(CryptoAPI):
         """
         processes the api data into list of tuples to be inserted into an sql source
         """
-        # TODO probably wrap into dataclass
+        fetch_timestamp = datetime.now(ZoneInfo("Europe/Amsterdam"))
+
+        # TODO probably wrap into dataclass with all data of a coin
         coins_list = list(coin_api_data.keys())
         
         coins_insert_data = []
@@ -70,7 +74,8 @@ class CoinGeckoAPI(CryptoAPI):
                     api_data["eur"],
                     api_data["eur_24h_change"],
                     api_data["eur_24h_vol"],
-                    api_data["eur_market_cap"]
+                    api_data["eur_market_cap"],
+                    fetch_timestamp
                 )
             )
 

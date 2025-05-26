@@ -1,8 +1,9 @@
-import boto3
-import sqlite3
+import psycopg2
+import os
 
 from crypto_data.config import TRACKING_COINS
 from crypto_data.apis.coingecko_api import CoinGeckoAPI
+
 
 def extract_data() -> list[tuple]:
     """
@@ -13,22 +14,53 @@ def extract_data() -> list[tuple]:
     
     return coin_api_data
 
-def load_data(coin_insert_data: dict[str, dict]):
+
+def load_data(coin_insert_data: list[tuple]):
     """
-    insert data in sqlite db
+    inserts the data into the database
     """
-    insert_coin_data_query = "INSERT INTO coins_data (name, price, change_24h, volume_24h, market_cap)" \
-    "VALUES (?, ?, ?, ?, ?)"
+
+    """rows_insert_data = []
+    for coin_name in coin_insert_data.keys():
+        row_insert_data = (
+            coin_insert_data[coin_name]["eur"],
+            coin_insert_data[coin_name]["eur_market_cap"],
+            coin_insert_data[coin_name]["eur_24h_vol"],
+            coin_insert_data[coin_name]["eur_24h_change"],
+            insert_timestamp
+        )
+
+        rows_insert_data.append(row_insert_data)"""
+
+    insert_coins_data_query = "INSERT INTO coins_data (name, price, change_24h, volume_24h, market_cap, fetch_timestap)" \
+    "VALUES (%s, %s, %s, %s, %s, %s)"
 
     try:
-        with sqlite3.connect("/home/satrya070/Documents/github/crypto-data/data/crypto-db.db") as conn:
-            cursor = conn.cursor()
-            cursor.executemany(insert_coin_data_query, coin_insert_data)
-            conn.commit()
-            cursor.close()
+        conn = psycopg2.connect(
+            host=os.environ["PGHOST"],
+            port=os.environ["PGPORT"],
+            user=os.environ["PGUSER"],
+            password=os.environ["PGPASSWORD"],
+            dbname=os.environ["PGDATABASE"]
+        )
 
-    except sqlite3.Error as e:
-        raise e
+        cursor = conn.cursor()
+        cursor.executemany(insert_coins_data_query, insert_coins_data_query)
+        conn.commit()
 
-def transform():
-    print("perform enhancement aggregations")
+        print("Data inserted succesfully")
+        
+    except Exception as e:
+        print("Data insert failed: ", e)
+        conn.rollback()
+
+    finally:
+        cursor.close()
+        conn.close()
+
+
+def transform_data():
+    """
+    performs any transformations on the data if needed
+    """
+    pass

@@ -15,25 +15,12 @@ def extract_data() -> list[tuple]:
     return coin_api_data
 
 
-def load_data(coin_insert_data: list[tuple]):
+def load_data(coin_insert_tuple_data: list[tuple]):
     """
     inserts the data into the database
     """
-
-    """rows_insert_data = []
-    for coin_name in coin_insert_data.keys():
-        row_insert_data = (
-            coin_insert_data[coin_name]["eur"],
-            coin_insert_data[coin_name]["eur_market_cap"],
-            coin_insert_data[coin_name]["eur_24h_vol"],
-            coin_insert_data[coin_name]["eur_24h_change"],
-            insert_timestamp
-        )
-
-        rows_insert_data.append(row_insert_data)"""
-
-    insert_coins_data_query = "INSERT INTO coins_data (name, price, change_24h, volume_24h, market_cap, fetch_timestap)" \
-    "VALUES (%s, %s, %s, %s, %s, %s)"
+    insert_coins_data_query = "INSERT INTO coins_data (name, price, change_24h, volume_24h, market_cap) " \
+    "VALUES (%s, %s, %s, %s, %s)"
 
     try:
         conn = psycopg2.connect(
@@ -45,7 +32,7 @@ def load_data(coin_insert_data: list[tuple]):
         )
 
         cursor = conn.cursor()
-        cursor.executemany(insert_coins_data_query, insert_coins_data_query)
+        cursor.executemany(insert_coins_data_query, coin_insert_tuple_data)
         conn.commit()
 
         print("Data inserted succesfully")

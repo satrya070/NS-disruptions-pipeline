@@ -3,7 +3,7 @@ import os
 import json
 
 from dotenv import load_dotenv
-from crypto_data.interfaces.crypto_api import CryptoAPI
+from ns_disruptions.interfaces.crypto_api import CryptoAPI
 
 load_dotenv()
 
@@ -14,7 +14,7 @@ class CoinGeckoAPI(CryptoAPI):
     def fetch_coins_data(self, coins_list: list[str]) -> dict[str, dict]:
         coins_list_param = self._prepare_coint_list_param(coins_list)
         url = f"https://api.coingecko.com/api/v3/simple/price?vs_currencies=eur&names={coins_list_param}&include_24hr_vol=true&include_24hr_change=true&precision=3&include_market_cap=true"
-
+        
         headers = {
             "accept": "application/json",
             "x-cg-demo-api-key": self.api_key

@@ -1,14 +1,14 @@
 [project]
-name = "crypto-data"
+name = "ns-disruptions-data"
 version = "1.0.0"
-description = "A datapipeline for automatically processing crypto data"
+description = "A datapipeline for automatically processing, storing, and viewing NS disruption data"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{"name" = "Satrya"}]
 
 [tool.poetry]
 packages = [
-    { include = "crypto_data", from = "src" }
+    { include = "ns_disruptions", from = "src" }
 ]
 
 [tool.poetry.dependencies]

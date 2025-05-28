@@ -31,11 +31,17 @@ class ETL:
         """
         disruption_insert_data = []
         disrupted_stations_insert_data = []
+    
         for disruption, disrupted_stations in processed_data:
             disruption_insert_data.append(astuple(disruption))
+
+            disrupted_stations = [astuple(disrupted_station) for disrupted_station in disrupted_stations]
             disrupted_stations_insert_data = disrupted_stations_insert_data + disrupted_stations
 
         insert_disruption_query = "INSERT INTO ns.ns_disruptions (id, type, impact, fetch_timestamp) " \
+        "VALUES (%s, %s, %s, %s)"
+
+        insert_disruption_station_link_query = "INSERT INTO ns.ns_disruption_station_link (disruption_id, station_code, level, fetch_timestamp) " \
         "VALUES (%s, %s, %s, %s)"
 
         try:
@@ -49,6 +55,7 @@ class ETL:
 
             cursor = conn.cursor()
             cursor.executemany(insert_disruption_query, disruption_insert_data)
+            cursor.executemany(insert_disruption_station_link_query, disrupted_stations_insert_data)
             conn.commit()
 
             print("Data inserted succesfully")

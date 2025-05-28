@@ -1,43 +1,52 @@
-import datetime
 
+
+from datetime import datetime
 from zoneinfo import ZoneInfo
 from ns_disruptions.data_interfaces.ns_dataclasses import (
     DisruptionData, DisruptionStationLink
 )
 
 
-def process_ns_data(ns_api_data: dict) -> tuple[DisruptionData, list[DisruptionStationLink]]:
+def process_ns_data(ns_api_data: list[dict]) -> list[tuple[DisruptionData, list[DisruptionStationLink]]]:
     """
     takes in raw ns api data and extract all relevant fields into data objects
     """
-    # data layout can differ between: DISRUPTION, CALAMITY, MAINTENANCE
-    # TODO handle all types
-    disruption_type = ns_api_data["type"]
-    fetch_timestamp = now_nl = datetime.now(ZoneInfo("Europe/Amsterdam"))
+    processed_data = []
+    for disruption_instance in ns_api_data:
+        # data layout can differ between: DISRUPTION, CALAMITY, MAINTENANCE
+        disruption_type = disruption_instance["type"]
 
-    for disruption_data in ns_api_data:
+        # TODO handle all types
+        if disruption_type == "CALAMITY":
+            continue
+
+        fetch_timestamp = datetime.now(ZoneInfo("Europe/Amsterdam"))
+
+        # for disruption_data in disruption_instance:
         disruption = DisruptionData(
-            id=disruption_data.get("id"),
-            type=disruption_data.get("type"),
-            impact=disruption_data.get("impact").get("value"),
+            id=disruption_instance.get("id"),
+            type=disruption_type,
+            impact=disruption_instance.get("impact").get("value"),
             fetch_timestamp=fetch_timestamp,
         )
 
         disrupted_stations = []
-        for publication in disruption_data["publicationSections"]:
+        for publication in disruption_instance["publicationSections"]:
             level = publication["consequence"]["level"]
             consequence_stations = publication["consequence"]["section"]["stations"]
 
             for station in consequence_stations:
                 disrupted_station = DisruptionStationLink(
-                    id=disruption_data.get("id"),
+                    id=disruption_instance.get("id"),
                     code=station.get("stationCode"),
                     level=level,
                     fetch_timestamp=fetch_timestamp
                 )
                 disrupted_stations.append(disrupted_station)
 
-    return tuple(disruption, disrupted_stations)
+        processed_data.append((disruption, disrupted_stations))
+
+    return processed_data
 
 
 def process_publications(publications: dict) -> list[str]:

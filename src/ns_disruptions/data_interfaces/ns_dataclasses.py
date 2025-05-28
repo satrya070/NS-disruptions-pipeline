@@ -4,10 +4,9 @@ from dataclasses import dataclass
 class DisruptionData:
     id: str = None
     type: str = None
-    niveau: str = None
     coordinates: str = None
-    impact: int
-    fetch_timestamp: str
+    impact: int = -1
+    fetch_timestamp: str = None
 
 
 @dataclass
@@ -15,4 +14,4 @@ class DisruptionStationLink:
     id: str = None
     code: str = None
     level: str = None
-    fetch_timestamp: str
+    fetch_timestamp: str = None

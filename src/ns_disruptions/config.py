@@ -16,7 +16,7 @@ TRACKING_COINS = [
     "Wrapped stETH"
 ]
 
-DISRUPTION_REQ_FIELDS = [
+DISRUPTION_FIELDS = [
     "id",
     "type",
     "impact"

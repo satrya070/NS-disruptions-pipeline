@@ -16,7 +16,7 @@ class ETL:
 
         return ns_api_data
     
-    def transform_data(self, ns_api_data: list[dict]):
+    def transform_data(self, ns_api_data: list[dict]) -> list[tuple]:
         """
         performs all required transformations on the data before database insert
         """

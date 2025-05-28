@@ -1,23 +1,26 @@
 [project]
-name = "crypto-data"
+name = "ns-disruptions-data"
 version = "1.0.0"
-description = "A datapipeline for automatically processing crypto data"
+description = "A datapipeline for automatically processing, storing, and viewing NS disruption data"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [{"name" = "Satrya"}]
 
 [tool.poetry]
 packages = [
-    { include = "crypto_data", from = "src" }
+    { include = "ns_disruptions", from = "src" }
 ]
 
 [tool.poetry.dependencies]
 boto3 = "^1.38.22"
 python-dotenv = "^1.1.0"
 psycopg2-binary = "^2.9.10"
+streamlit = "^1.45.1"
 
 [tool.poetry.group.dev.dependencies]
 jupyterlab = "^4.4.2"
+sqlalchemy = "^2.0.41"
+pytest = "^8.3.5"
 
 [build-system]
 requires = ["setuptools"]

@@ -1,0 +1,1198 @@
+[
+    {
+        "type": "DISRUPTION",
+        "id": "6056540",
+        "title": "Zwolle - Almelo.",
+        "isActive": true,
+        "topic": "disruption_6056540_nl",
+        "local": false,
+        "titleSections": [
+            [
+                {
+                    "type": "STATION",
+                    "value": "Zwolle"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Heino"
+                },
+                {
+                    "type": "ICON",
+                    "value": "DISRUPTION"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Raalte"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Almelo"
+                }
+            ]
+        ],
+        "registrationTime": "2025-05-27T16:00:54+0200",
+        "releaseTime": "2025-05-27T16:00:54+0200",
+        "start": "2025-05-27T13:34:12+0200",
+        "end": "2025-05-27T16:30:00+0200",
+        "phase": {
+            "id": "3",
+            "label": "Vervangend vervoer"
+        },
+        "impact": {
+            "value": 3
+        },
+        "expectedDuration": {
+            "description": "Dit duurt tot ongeveer 16:30 uur.",
+            "endTime": "2025-05-27T16:30:00+0200"
+        },
+        "publicationSections": [
+            {
+                "section": {
+                    "stations": [
+                        {
+                            "coordinate": {
+                                "lat": 52.5047225952148,
+                                "lng": 6.09194421768188
+                            },
+                            "countryCode": "NL",
+                            "name": "Zwolle",
+                            "stationCode": "ZL",
+                            "uicCode": "8400747"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.4272232055664,
+                                "lng": 6.22111129760742
+                            },
+                            "countryCode": "NL",
+                            "name": "Heino",
+                            "stationCode": "HNO",
+                            "uicCode": "8400310"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.3916664123535,
+                                "lng": 6.27750015258789
+                            },
+                            "countryCode": "NL",
+                            "name": "Raalte",
+                            "stationCode": "RAT",
+                            "uicCode": "8400513"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.366111,
+                                "lng": 6.462
+                            },
+                            "countryCode": "NL",
+                            "name": "Nijverdal",
+                            "stationCode": "NVD",
+                            "uicCode": "8400472"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.3613891601562,
+                                "lng": 6.59166669845581
+                            },
+                            "countryCode": "NL",
+                            "name": "Wierden",
+                            "stationCode": "WDN",
+                            "uicCode": "8400691"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.3580551147461,
+                                "lng": 6.65388870239258
+                            },
+                            "countryCode": "NL",
+                            "name": "Almelo",
+                            "stationCode": "AML",
+                            "uicCode": "8400051"
+                        }
+                    ],
+                    "direction": "BOTH",
+                    "operators": [
+                        "NS"
+                    ]
+                },
+                "consequence": {
+                    "section": {
+                        "stations": [
+                            {
+                                "coordinate": {
+                                    "lat": 52.4272232055664,
+                                    "lng": 6.22111129760742
+                                },
+                                "countryCode": "NL",
+                                "name": "Heino",
+                                "stationCode": "HNO",
+                                "uicCode": "8400310"
+                            },
+                            {
+                                "coordinate": {
+                                    "lat": 52.3916664123535,
+                                    "lng": 6.27750015258789
+                                },
+                                "countryCode": "NL",
+                                "name": "Raalte",
+                                "stationCode": "RAT",
+                                "uicCode": "8400513"
+                            }
+                        ],
+                        "direction": "BOTH",
+                        "operators": [
+                            "NS"
+                        ]
+                    },
+                    "description": "geen treinen",
+                    "level": "LESS_TRAINS"
+                },
+                "sectionType": "NL"
+            }
+        ],
+        "timespans": [
+            {
+                "start": "2025-05-27T13:34:12+0200",
+                "end": "2025-05-27T16:30:00+0200",
+                "period": "Dinsdag 27 mei 13:34 uur t/m dinsdag 27 mei 16:30 uur.",
+                "situation": {
+                    "label": "Door een seinstoring: tussen Heino en Raalte rijden er geen treinen."
+                },
+                "cause": {
+                    "label": "seinstoring"
+                },
+                "alternativeTransport": {
+                    "label": "er rijden stopbussen",
+                    "shortLabel": "er rijden stopbussen"
+                },
+                "advices": []
+            }
+        ],
+        "alternativeTransportTimespans": [
+            {
+                "start": "2025-05-27T13:34:12+0200",
+                "end": "2025-05-27T16:30:00+0200",
+                "alternativeTransport": {
+                    "location": [
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 52.5047225952148,
+                                    "lng": 6.09194421768188
+                                },
+                                "countryCode": "NL",
+                                "name": "Zwolle",
+                                "stationCode": "ZL",
+                                "uicCode": "8400747"
+                            },
+                            "description": "vanaf de Hanzelaan, aan de zuidzijde van het station"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 52.4272232055664,
+                                    "lng": 6.22111129760742
+                                },
+                                "countryCode": "NL",
+                                "name": "Heino",
+                                "stationCode": "HNO",
+                                "uicCode": "8400310"
+                            },
+                            "description": "vanaf het Marktplein"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 52.3916664123535,
+                                    "lng": 6.27750015258789
+                                },
+                                "countryCode": "NL",
+                                "name": "Raalte",
+                                "stationCode": "RAT",
+                                "uicCode": "8400513"
+                            },
+                            "description": "vanaf het busstation"
+                        }
+                    ],
+                    "label": "Er rijden stopbussen tussen Zwolle, Heino en Raalte.",
+                    "shortLabel": "Er rijden stopbussen Zwolle - Heino - Raalte."
+                }
+            }
+        ]
+    },
+    {
+        "type": "CALAMITY",
+        "id": "6ffa1726-cb80-44e7-ba7f-c6bc9d824d9c",
+        "title": "Werkzaamheden Schiphol Airport - Amsterdam RAI 29 mei t/m 1 juni.",
+        "isActive": true,
+        "topic": "disruption_6ffa1726-cb80-44e7-ba7f-c6bc9d824d9c_nl",
+        "description": "Door werkzaamheden rijden van donderdag 29 mei tot en met zondag 1 juni geen treinen tussen Schiphol en Amsterdam RAI.",
+        "url": "https://www.ns.nl/reisinformatie/calamiteiten/werkzaamheden-schiphol-airport---amsterdam-rai-29-mei-t-m-1-juni.html",
+        "priority": "PRIO_3",
+        "lastUpdated": "2025-05-26T00:15:00+0200",
+        "bodyItems": [
+            {
+                "type": "TEXT",
+                "content": {
+                    "text": "<p>Doorgaande reizigers reizen om via Amsterdam Centraal. Reizigers tussen Schiphol en Amsterdam Zuid reizen om met de metro via Amsterdam Lelylaan. Plan je reis vooraf met de reisplanner.</p>"
+                }
+            }
+        ],
+        "buttons": {
+            "position": [
+                "BOTTOM"
+            ],
+            "items": [
+                {
+                    "label": "Plan je reis",
+                    "accessibilityLabel": "Plan je reis",
+                    "url": "https://www.ns.nl/reisplanner",
+                    "type": "PLANNER"
+                }
+            ]
+        }
+    },
+    {
+        "type": "MAINTENANCE",
+        "id": "7004492",
+        "title": "Groningen - Leer.",
+        "isActive": true,
+        "local": false,
+        "titleSections": [
+            [
+                {
+                    "type": "STATION",
+                    "value": "Groningen"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Bad Nieuweschans"
+                },
+                {
+                    "type": "ICON",
+                    "value": "MAINTENANCE"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Weener"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Leer (Ostfr.)"
+                }
+            ]
+        ],
+        "registrationTime": "2025-04-03T10:55:48+0200",
+        "start": "2024-02-01T04:00:00+0100",
+        "releaseTime": "2025-04-03T10:55:48+0200",
+        "end": "2025-12-13T23:59:00+0100",
+        "period": "Donderdag 1 februari 2024 4:00 uur t/m zaterdag 13 december 23:59 uur.",
+        "impact": {
+            "value": 3
+        },
+        "publicationSections": [
+            {
+                "section": {
+                    "stations": [
+                        {
+                            "coordinate": {
+                                "lat": 53.2105560302734,
+                                "lng": 6.56472206115723
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen",
+                            "stationCode": "GN",
+                            "uicCode": "8400263"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.20480027,
+                                "lng": 6.5854178
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen Europapark",
+                            "stationCode": "GERP",
+                            "uicCode": "8400238"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1617362,
+                                "lng": 6.7220882
+                            },
+                            "countryCode": "NL",
+                            "name": "Kropswolde",
+                            "stationCode": "KW",
+                            "uicCode": "8400369"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1607232,
+                                "lng": 6.7402989
+                            },
+                            "countryCode": "NL",
+                            "name": "Martenshoek",
+                            "stationCode": "MTH",
+                            "uicCode": "8400430"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1598181316756,
+                                "lng": 6.77075386047363
+                            },
+                            "countryCode": "NL",
+                            "name": "Hoogezand-Sappemeer",
+                            "stationCode": "HGZ",
+                            "uicCode": "8400331"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1596122800056,
+                                "lng": 6.8679141998291
+                            },
+                            "countryCode": "NL",
+                            "name": "Zuidbroek",
+                            "stationCode": "ZB",
+                            "uicCode": "8400742"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1655362,
+                                "lng": 6.9777775
+                            },
+                            "countryCode": "NL",
+                            "name": "Scheemda",
+                            "stationCode": "SDA",
+                            "uicCode": "8400551"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1392377,
+                                "lng": 7.035101
+                            },
+                            "countryCode": "NL",
+                            "name": "Winschoten",
+                            "stationCode": "WS",
+                            "uicCode": "8400696"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1844,
+                                "lng": 7.19937
+                            },
+                            "countryCode": "NL",
+                            "name": "Bad Nieuweschans",
+                            "stationCode": "NSCH",
+                            "uicCode": "8400457"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.16311,
+                                "lng": 7.3442
+                            },
+                            "countryCode": "D",
+                            "name": "Weener",
+                            "stationCode": "WR",
+                            "uicCode": "8021239"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.23165,
+                                "lng": 7.465283
+                            },
+                            "countryCode": "D",
+                            "name": "Leer (Ostfriesl)",
+                            "stationCode": "LEER",
+                            "uicCode": "8021091"
+                        }
+                    ],
+                    "direction": "BOTH",
+                    "operators": [
+                        "Arriva"
+                    ]
+                },
+                "consequence": {
+                    "section": {
+                        "stations": [
+                            {
+                                "coordinate": {
+                                    "lat": 53.1844,
+                                    "lng": 7.19937
+                                },
+                                "countryCode": "NL",
+                                "name": "Bad Nieuweschans",
+                                "stationCode": "NSCH",
+                                "uicCode": "8400457"
+                            },
+                            {
+                                "coordinate": {
+                                    "lat": 53.16311,
+                                    "lng": 7.3442
+                                },
+                                "countryCode": "D",
+                                "name": "Weener",
+                                "stationCode": "WR",
+                                "uicCode": "8021239"
+                            }
+                        ],
+                        "direction": "BOTH",
+                        "operators": [
+                            "Arriva"
+                        ]
+                    },
+                    "description": "er rijden bussen",
+                    "level": "LESS_TRAINS"
+                },
+                "sectionType": "NEIGHBORING_COUNTRY"
+            }
+        ],
+        "summaryAdditionalTravelTime": {
+            "label": "De extra reistijd kan oplopen tot 30 minuten.",
+            "shortLabel": "Extra reistijd tot 30 min.",
+            "maximumDurationInMinutes": 30
+        },
+        "timespans": [
+            {
+                "start": "2024-02-01T04:00:00+0100",
+                "end": "2025-12-13T23:59:00+0100",
+                "period": "Donderdag 1 februari 2024 4:00 uur t/m zaterdag 13 december 23:59 uur.",
+                "situation": {
+                    "label": "Door een aangepaste dienstregeling: tussen Bad Nieuweschans en Weener rijden er bussen."
+                },
+                "cause": {
+                    "label": "aangepaste dienstregeling"
+                },
+                "additionalTravelTime": {
+                    "label": "De extra reistijd kan oplopen tot 30 minuten.",
+                    "shortLabel": "Extra reistijd tot 30 min.",
+                    "maximumDurationInMinutes": 30
+                },
+                "alternativeTransport": {
+                    "label": "er rijden stopbussen",
+                    "shortLabel": "er rijden stopbussen"
+                },
+                "advices": []
+            }
+        ],
+        "alternativeTransportTimespans": [
+            {
+                "start": "2024-02-01T04:00:00+0100",
+                "end": "2025-12-13T23:59:00+0100",
+                "alternativeTransport": {
+                    "location": [
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.1844,
+                                    "lng": 7.19937
+                                },
+                                "countryCode": "NL",
+                                "name": "Bad Nieuweschans",
+                                "stationCode": "NSCH",
+                                "uicCode": "8400457"
+                            },
+                            "description": "vanaf de voorzijde van het station"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.16311,
+                                    "lng": 7.3442
+                                },
+                                "countryCode": "D",
+                                "name": "Weener",
+                                "stationCode": "WR",
+                                "uicCode": "8021239"
+                            },
+                            "description": "vanaf de voorzijde van het station"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.23165,
+                                    "lng": 7.465283
+                                },
+                                "countryCode": "D",
+                                "name": "Leer (Ostfriesl)",
+                                "stationCode": "LEER",
+                                "uicCode": "8021091"
+                            },
+                            "description": "vanaf het busstation"
+                        }
+                    ],
+                    "label": "Er rijden stopbussen tussen Bad Nieuweschans, Weener en Leer (Ostfriesl).",
+                    "shortLabel": "Er rijden stopbussen Bad Nieuweschans - Weener - Leer (Ostfr.)."
+                }
+            }
+        ]
+    },
+    {
+        "type": "MAINTENANCE",
+        "id": "7006147",
+        "title": "Zwolle - Groningen; Groningen - Bad Nieuweschans; Groningen - Veendam.",
+        "isActive": true,
+        "local": false,
+        "titleSections": [
+            [
+                {
+                    "type": "STATION",
+                    "value": "Groningen"
+                },
+                {
+                    "type": "ICON",
+                    "value": "MAINTENANCE"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Europapark"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Bad Nieuweschans"
+                }
+            ],
+            [
+                {
+                    "type": "STATION",
+                    "value": "Zwolle"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Europapark"
+                },
+                {
+                    "type": "ICON",
+                    "value": "MAINTENANCE"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Groningen"
+                }
+            ],
+            [
+                {
+                    "type": "STATION",
+                    "value": "Groningen"
+                },
+                {
+                    "type": "ICON",
+                    "value": "MAINTENANCE"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Europapark"
+                },
+                {
+                    "type": "STATION",
+                    "value": "Veendam"
+                }
+            ]
+        ],
+        "registrationTime": "2025-05-21T15:13:06+0200",
+        "start": "2025-05-10T00:40:00+0200",
+        "releaseTime": "2025-05-21T15:13:06+0200",
+        "end": "2025-07-13T02:00:00+0200",
+        "period": "Zaterdag 10 mei 0:40 uur t/m zondag 13 juli 2:00 uur.",
+        "impact": {
+            "value": 5
+        },
+        "publicationSections": [
+            {
+                "section": {
+                    "stations": [
+                        {
+                            "coordinate": {
+                                "lat": 53.2105560302734,
+                                "lng": 6.56472206115723
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen",
+                            "stationCode": "GN",
+                            "uicCode": "8400263"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.20480027,
+                                "lng": 6.5854178
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen Europapark",
+                            "stationCode": "GERP",
+                            "uicCode": "8400238"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1617362,
+                                "lng": 6.7220882
+                            },
+                            "countryCode": "NL",
+                            "name": "Kropswolde",
+                            "stationCode": "KW",
+                            "uicCode": "8400369"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1607232,
+                                "lng": 6.7402989
+                            },
+                            "countryCode": "NL",
+                            "name": "Martenshoek",
+                            "stationCode": "MTH",
+                            "uicCode": "8400430"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1598181316756,
+                                "lng": 6.77075386047363
+                            },
+                            "countryCode": "NL",
+                            "name": "Hoogezand-Sappemeer",
+                            "stationCode": "HGZ",
+                            "uicCode": "8400331"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1596122800056,
+                                "lng": 6.8679141998291
+                            },
+                            "countryCode": "NL",
+                            "name": "Zuidbroek",
+                            "stationCode": "ZB",
+                            "uicCode": "8400742"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1655362,
+                                "lng": 6.9777775
+                            },
+                            "countryCode": "NL",
+                            "name": "Scheemda",
+                            "stationCode": "SDA",
+                            "uicCode": "8400551"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1392377,
+                                "lng": 7.035101
+                            },
+                            "countryCode": "NL",
+                            "name": "Winschoten",
+                            "stationCode": "WS",
+                            "uicCode": "8400696"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1844,
+                                "lng": 7.19937
+                            },
+                            "countryCode": "NL",
+                            "name": "Bad Nieuweschans",
+                            "stationCode": "NSCH",
+                            "uicCode": "8400457"
+                        }
+                    ],
+                    "direction": "BOTH",
+                    "operators": [
+                        "Arriva"
+                    ]
+                },
+                "consequence": {
+                    "section": {
+                        "stations": [
+                            {
+                                "coordinate": {
+                                    "lat": 53.2105560302734,
+                                    "lng": 6.56472206115723
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen",
+                                "stationCode": "GN",
+                                "uicCode": "8400263"
+                            },
+                            {
+                                "coordinate": {
+                                    "lat": 53.20480027,
+                                    "lng": 6.5854178
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen Europapark",
+                                "stationCode": "GERP",
+                                "uicCode": "8400238"
+                            }
+                        ],
+                        "direction": "BOTH",
+                        "operators": [
+                            "Arriva"
+                        ]
+                    },
+                    "description": "er rijden bussen",
+                    "level": "LESS_TRAINS"
+                },
+                "sectionType": "NL"
+            },
+            {
+                "section": {
+                    "stations": [
+                        {
+                            "coordinate": {
+                                "lat": 52.5047225952148,
+                                "lng": 6.09194421768188
+                            },
+                            "countryCode": "NL",
+                            "name": "Zwolle",
+                            "stationCode": "ZL",
+                            "uicCode": "8400747"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.6908340454102,
+                                "lng": 6.19750022888184
+                            },
+                            "countryCode": "NL",
+                            "name": "Meppel",
+                            "stationCode": "MP",
+                            "uicCode": "8400435"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.7338905334473,
+                                "lng": 6.47361087799072
+                            },
+                            "countryCode": "NL",
+                            "name": "Hoogeveen",
+                            "stationCode": "HGV",
+                            "uicCode": "8400330"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.8547210693359,
+                                "lng": 6.52111101150513
+                            },
+                            "countryCode": "NL",
+                            "name": "Beilen",
+                            "stationCode": "BL",
+                            "uicCode": "8400100"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 52.9916648864746,
+                                "lng": 6.57083320617676
+                            },
+                            "countryCode": "NL",
+                            "name": "Assen",
+                            "stationCode": "ASN",
+                            "uicCode": "8400073"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1761093139648,
+                                "lng": 6.61722230911255
+                            },
+                            "countryCode": "NL",
+                            "name": "Haren",
+                            "stationCode": "HRN",
+                            "uicCode": "8400297"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.20480027,
+                                "lng": 6.5854178
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen Europapark",
+                            "stationCode": "GERP",
+                            "uicCode": "8400238"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.2105560302734,
+                                "lng": 6.56472206115723
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen",
+                            "stationCode": "GN",
+                            "uicCode": "8400263"
+                        }
+                    ],
+                    "direction": "BOTH",
+                    "operators": [
+                        "NS"
+                    ]
+                },
+                "consequence": {
+                    "section": {
+                        "stations": [
+                            {
+                                "coordinate": {
+                                    "lat": 53.20480027,
+                                    "lng": 6.5854178
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen Europapark",
+                                "stationCode": "GERP",
+                                "uicCode": "8400238"
+                            },
+                            {
+                                "coordinate": {
+                                    "lat": 53.2105560302734,
+                                    "lng": 6.56472206115723
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen",
+                                "stationCode": "GN",
+                                "uicCode": "8400263"
+                            }
+                        ],
+                        "direction": "BOTH",
+                        "operators": [
+                            "NS"
+                        ]
+                    },
+                    "description": "er rijden bussen",
+                    "level": "LESS_TRAINS"
+                },
+                "sectionType": "NL"
+            },
+            {
+                "section": {
+                    "stations": [
+                        {
+                            "coordinate": {
+                                "lat": 53.2105560302734,
+                                "lng": 6.56472206115723
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen",
+                            "stationCode": "GN",
+                            "uicCode": "8400263"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.20480027,
+                                "lng": 6.5854178
+                            },
+                            "countryCode": "NL",
+                            "name": "Groningen Europapark",
+                            "stationCode": "GERP",
+                            "uicCode": "8400238"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1617362,
+                                "lng": 6.7220882
+                            },
+                            "countryCode": "NL",
+                            "name": "Kropswolde",
+                            "stationCode": "KW",
+                            "uicCode": "8400369"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1607232,
+                                "lng": 6.7402989
+                            },
+                            "countryCode": "NL",
+                            "name": "Martenshoek",
+                            "stationCode": "MTH",
+                            "uicCode": "8400430"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1598181316756,
+                                "lng": 6.77075386047363
+                            },
+                            "countryCode": "NL",
+                            "name": "Hoogezand-Sappemeer",
+                            "stationCode": "HGZ",
+                            "uicCode": "8400331"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.1596122800056,
+                                "lng": 6.8679141998291
+                            },
+                            "countryCode": "NL",
+                            "name": "Zuidbroek",
+                            "stationCode": "ZB",
+                            "uicCode": "8400742"
+                        },
+                        {
+                            "coordinate": {
+                                "lat": 53.10324,
+                                "lng": 6.88475
+                            },
+                            "countryCode": "NL",
+                            "name": "Veendam",
+                            "stationCode": "VDM",
+                            "uicCode": "8400636"
+                        }
+                    ],
+                    "direction": "BOTH",
+                    "operators": [
+                        "Arriva"
+                    ]
+                },
+                "consequence": {
+                    "section": {
+                        "stations": [
+                            {
+                                "coordinate": {
+                                    "lat": 53.2105560302734,
+                                    "lng": 6.56472206115723
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen",
+                                "stationCode": "GN",
+                                "uicCode": "8400263"
+                            },
+                            {
+                                "coordinate": {
+                                    "lat": 53.20480027,
+                                    "lng": 6.5854178
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen Europapark",
+                                "stationCode": "GERP",
+                                "uicCode": "8400238"
+                            }
+                        ],
+                        "direction": "BOTH",
+                        "operators": [
+                            "Arriva"
+                        ]
+                    },
+                    "description": "er rijden bussen",
+                    "level": "LESS_TRAINS"
+                },
+                "sectionType": "NL"
+            }
+        ],
+        "summaryAdditionalTravelTime": {
+            "label": "De extra reistijd kan oplopen tot 30 minuten.",
+            "shortLabel": "Extra reistijd tot 30 min.",
+            "maximumDurationInMinutes": 30
+        },
+        "timespans": [
+            {
+                "start": "2025-05-10T00:40:00+0200",
+                "end": "2025-07-13T02:00:00+0200",
+                "period": "Zaterdag 10 mei 0:40 uur t/m zondag 13 juli 2:00 uur.",
+                "situation": {
+                    "label": "Door werkzaamheden: tussen Groningen Europapark en Groningen rijden er bussen."
+                },
+                "cause": {
+                    "label": "werkzaamheden"
+                },
+                "additionalTravelTime": {
+                    "label": "De extra reistijd kan oplopen tot 30 minuten.",
+                    "shortLabel": "Extra reistijd tot 30 min.",
+                    "maximumDurationInMinutes": 30
+                },
+                "alternativeTransport": {
+                    "label": "er rijden stop- en snelbussen",
+                    "shortLabel": "er rijden stop- en snelbussen"
+                },
+                "advices": [
+                    "Tijdens deze periode rijden er in verschillende fases geen treinen van en naar station Groningen. NS en Arriva zetten bussen in."
+                ]
+            }
+        ],
+        "alternativeTransportTimespans": [
+            {
+                "start": "2025-05-10T00:40:00+0200",
+                "end": "2025-07-13T02:00:00+0200",
+                "alternativeTransport": {
+                    "location": [
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.20480027,
+                                    "lng": 6.5854178
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen Europapark",
+                                "stationCode": "GERP",
+                                "uicCode": "8400238"
+                            },
+                            "description": "vanaf de bushalte"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.2105560302734,
+                                    "lng": 6.56472206115723
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen",
+                                "stationCode": "GN",
+                                "uicCode": "8400263"
+                            },
+                            "description": "vanaf het Emmaplein"
+                        }
+                    ],
+                    "label": "Er rijden snelbussen tussen Groningen Europapark en Groningen.",
+                    "shortLabel": "Er rijden snelbussen Europapark - Groningen."
+                }
+            },
+            {
+                "start": "2025-06-14T00:53:00+0200",
+                "end": "2025-06-14T02:30:00+0200",
+                "alternativeTransport": {
+                    "location": [
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 52.9916648864746,
+                                    "lng": 6.57083320617676
+                                },
+                                "countryCode": "NL",
+                                "name": "Assen",
+                                "stationCode": "ASN",
+                                "uicCode": "8400073"
+                            },
+                            "description": "vanaf het busstation"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.2105560302734,
+                                    "lng": 6.56472206115723
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen",
+                                "stationCode": "GN",
+                                "uicCode": "8400263"
+                            },
+                            "description": "vanaf het Emmaplein"
+                        }
+                    ],
+                    "label": "Er rijden snelbussen van Assen naar Groningen.",
+                    "shortLabel": "Er rijden snelbussen Assen -> Groningen."
+                }
+            },
+            {
+                "start": "2025-06-14T00:58:00+0200",
+                "end": "2025-06-14T03:13:00+0200",
+                "alternativeTransport": {
+                    "location": [
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 52.9916648864746,
+                                    "lng": 6.57083320617676
+                                },
+                                "countryCode": "NL",
+                                "name": "Assen",
+                                "stationCode": "ASN",
+                                "uicCode": "8400073"
+                            },
+                            "description": "vanaf het busstation"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.1761093139648,
+                                    "lng": 6.61722230911255
+                                },
+                                "countryCode": "NL",
+                                "name": "Haren",
+                                "stationCode": "HRN",
+                                "uicCode": "8400297"
+                            },
+                            "description": "vanaf de doorgaande weg"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.20480027,
+                                    "lng": 6.5854178
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen Europapark",
+                                "stationCode": "GERP",
+                                "uicCode": "8400238"
+                            },
+                            "description": "vanaf de bushalte"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.2105560302734,
+                                    "lng": 6.56472206115723
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen",
+                                "stationCode": "GN",
+                                "uicCode": "8400263"
+                            },
+                            "description": "vanaf het Emmaplein"
+                        }
+                    ],
+                    "label": "Er rijden stopbussen tussen Assen, Haren, Groningen Europapark en Groningen.",
+                    "shortLabel": "Er rijden stopbussen Assen - Haren - Europapark - Groningen."
+                }
+            },
+            {
+                "start": "2025-06-14T01:35:00+0200",
+                "end": "2025-06-14T02:18:00+0200",
+                "alternativeTransport": {
+                    "location": [
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 52.9916648864746,
+                                    "lng": 6.57083320617676
+                                },
+                                "countryCode": "NL",
+                                "name": "Assen",
+                                "stationCode": "ASN",
+                                "uicCode": "8400073"
+                            },
+                            "description": "vanaf het busstation"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.1761093139648,
+                                    "lng": 6.61722230911255
+                                },
+                                "countryCode": "NL",
+                                "name": "Haren",
+                                "stationCode": "HRN",
+                                "uicCode": "8400297"
+                            },
+                            "description": "vanaf de doorgaande weg"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.20480027,
+                                    "lng": 6.5854178
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen Europapark",
+                                "stationCode": "GERP",
+                                "uicCode": "8400238"
+                            },
+                            "description": "vanaf de bushalte"
+                        },
+                        {
+                            "station": {
+                                "coordinate": {
+                                    "lat": 53.2105560302734,
+                                    "lng": 6.56472206115723
+                                },
+                                "countryCode": "NL",
+                                "name": "Groningen",
+                                "stationCode": "GN",
+                                "uicCode": "8400263"
+                            },
+                            "description": "vanaf het Emmaplein"
+                        }
+                    ],
+                    "label": "Er rijden stopbussen van Assen, Haren, Groningen Europapark naar Groningen.",
+                    "shortLabel": "Er rijden stopbussen Assen -> Haren -> Europapark -> Groningen."
+                }
+            }
+        ]
+    }
+]

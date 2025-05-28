@@ -1,4 +1,0 @@
-
-
-def testo():
-    pass

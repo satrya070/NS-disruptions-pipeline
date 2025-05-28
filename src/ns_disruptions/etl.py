@@ -1,6 +1,7 @@
 import psycopg2
 import os
 
+from dataclasses import astuple
 from ns_disruptions.config import DISRUPTION_FIELDS
 from ns_disruptions.apis.ns_api import nsAPI
 from ns_disruptions.ns_util import process_ns_data
@@ -24,12 +25,18 @@ class ETL:
         
         return processed_data
 
-    def load_data(self, processed_data: tuple):
+    def load_data(self, processed_data: list[tuple]):
         """
         inserts the data into the database
         """
-        insert_coins_data_query = "INSERT INTO coins_data (name, price, change_24h, volume_24h, market_cap) " \
-        "VALUES (%s, %s, %s, %s, %s)"
+        disruption_insert_data = []
+        disrupted_stations_insert_data = []
+        for disruption, disrupted_stations in processed_data:
+            disruption_insert_data.append(astuple(disruption))
+            disrupted_stations_insert_data = disrupted_stations_insert_data + disrupted_stations
+
+        insert_disruption_query = "INSERT INTO ns.ns_disruptions (id, type, impact, fetch_timestamp) " \
+        "VALUES (%s, %s, %s, %s)"
 
         try:
             conn = psycopg2.connect(
@@ -41,7 +48,7 @@ class ETL:
             )
 
             cursor = conn.cursor()
-            cursor.executemany(insert_coins_data_query, coin_insert_tuple_data)
+            cursor.executemany(insert_disruption_query, disruption_insert_data)
             conn.commit()
 
             print("Data inserted succesfully")

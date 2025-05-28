@@ -21,6 +21,7 @@ def process_ns_data(ns_api_data: list[dict]) -> list[tuple[DisruptionData, list[
             continue
 
         fetch_timestamp = datetime.now(ZoneInfo("Europe/Amsterdam"))
+        fetch_timestamp = fetch_timestamp.replace(second=0, microsecond=0)  # use minute precision
 
         # for disruption_data in disruption_instance:
         disruption = DisruptionData(

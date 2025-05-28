@@ -1,8 +1,10 @@
 import psycopg2
 import os
 
-from ns_disruptions.config import TRACKING_COINS
+from ns_disruptions.config import DISRUPTION_FIELDS
 from ns_disruptions.apis.ns_api import nsAPI
+from ns_disruptions.ns_util import process_ns_data
+from ns_disruptions.data_interfaces.ns_dataclasses import DisruptionData, DisruptionStationLink
 
 class ETL:
     def extract_data(self) -> list[dict]:
@@ -14,14 +16,15 @@ class ETL:
 
         return ns_api_data
     
-    def transform_data(self):
+    def transform_data(self, ns_api_data: list[dict]):
         """
-        performs any required transformations on the data
+        performs all required transformations on the data before database insert
         """
-        pass
+        processed_data = process_ns_data(ns_api_data)
+        
+        return processed_data
 
-
-    def load_data(self, coin_insert_tuple_data: list[tuple]):
+    def load_data(self, processed_data: tuple):
         """
         inserts the data into the database
         """

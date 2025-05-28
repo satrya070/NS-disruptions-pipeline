@@ -15,3 +15,9 @@ TRACKING_COINS = [
     "Hyperliquid",
     "Wrapped stETH"
 ]
+
+DISRUPTION_REQ_FIELDS = [
+    "id",
+    "type",
+    "impact"
+]

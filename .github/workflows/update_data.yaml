@@ -27,4 +27,10 @@ jobs:
       run: poetry install
 
     - name: Run data update
+      env:
+          PGHOST: ${{ secrets.PGHOST }}
+          PGPORT: ${{ secrets.PGPORT }}
+          PGUSER: ${{ secrets.PGUSER }}
+          PGPASSWORD: ${{ secrets.PGPASSWORD }}
+          PGDATABASE: ${{ secrets.PGDATABASE }}
       run: poetry run python -m ns_disruptions.main

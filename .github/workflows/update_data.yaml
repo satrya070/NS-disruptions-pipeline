@@ -2,7 +2,7 @@ name: Update disruption data
 
 on:
   schedule:
-    - cron: '0 * * * *' # every 3 hours
+    - cron: '0 */3 * * *' # every 3 hours
   workflow_dispatch:  # manual trigger
 
 jobs:
@@ -33,4 +33,5 @@ jobs:
           PGUSER: ${{ secrets.PGUSER }}
           PGPASSWORD: ${{ secrets.PGPASSWORD }}
           PGDATABASE: ${{ secrets.PGDATABASE }}
+          NS_API_KEY: ${{ secrets.NS_API_KEY }}
       run: poetry run python -m ns_disruptions.main

@@ -16,14 +16,22 @@ def process_ns_data(ns_api_data: list[dict]) -> list[tuple[DisruptionData, list[
         # data layout can differ between: DISRUPTION, CALAMITY, MAINTENANCE
         disruption_type = disruption_instance["type"]
 
-        # TODO handle all types
-        if disruption_type == "CALAMITY":
-            continue
-
         fetch_timestamp = datetime.now(ZoneInfo("Europe/Amsterdam"))
         fetch_timestamp = fetch_timestamp.replace(second=0, microsecond=0)  # use minute precision
 
-        # for disruption_data in disruption_instance:
+        # handle CALAMITY type
+        if disruption_type == "CALAMITY":
+            disruption = DisruptionData(
+                id=disruption_instance.get("id"),
+                type=disruption_type,
+                fetch_timestamp=fetch_timestamp,
+            )
+            # this type doesnt have stations asociated with it
+            processed_data.append((disruption, []))
+
+            continue
+
+        # handle disruption of type DISRUPTION | MAINTENANCE
         disruption = DisruptionData(
             id=disruption_instance.get("id"),
             type=disruption_type,

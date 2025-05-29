@@ -1,4 +1,4 @@
--- 0.0 affected station in the last 24 hours for the map
+-- 0.0 affected stations in the last 24 hours for the map
 with disrupted_stations_24h as (
 	select nd.id, ndsl.station_code, ndsl.level from ns.ns_disruptions nd
 	join ns.ns_disruption_station_link ndsl on nd.id = ndsl.disruption_id
@@ -6,7 +6,7 @@ with disrupted_stations_24h as (
 	group by id, ndsl.station_code, ndsl.level
 )
 select * from disrupted_stations_24h ds
-join ns.ns_stations st on ds.station_code = st.code
+join ns.ns_stations nst on ds.station_code = nst.code -- only NL based stations in ns_stations, so this join removes non-NL related stations 
 
 
 -- 1.0 per day aggregations (n active disruptions, % type disruptions, high/low/avg disruption_impact, % province?) --------
@@ -19,7 +19,8 @@ group by dd.day, dd.id, ndsl.station_code, ndsl."level", dd.impact  -- for each 
 
 -- 3.0 all time(last 30 days or group per month) : (total disruption, % type disruption, avg/high/low per disruptions per day, avg/high/low impact)
 
--- 4.0 per province
+-- e4.0 per province?
+-- e5.0 stations based?
 
 
 -- 1.1 per day aggregations - list stations per day -------------

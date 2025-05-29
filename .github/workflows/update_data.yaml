@@ -2,7 +2,7 @@ name: Update disruption data
 
 on:
   schedule:
-    - cron: '0 */3 * * *' # every 3 hours
+    - cron: '0 1,4,7,10,13,16,19,22 * * *'  # Every 3 hours in Amsterdam time
   workflow_dispatch:  # manual trigger
 
 jobs:

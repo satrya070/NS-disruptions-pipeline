@@ -52,7 +52,11 @@ st.subheader("Affected stations in the last 24 hours")
 with st.container(height=800):
     st_data = st_folium(m, use_container_width=True, height=700)
 
-# render stats last 30d on day level
+# display affected stations -----------------------------------
+st.subheader("List of affected stations in the last 24 hours")
+st.dataframe(df_affected_stations, use_container_width=True)
+
+# render stats last 30d on day level ---------------------------------------
 st.subheader("Number of disruptions per day")
 # format the timestamp col to datetime
 df_day_stats["day"] = pd.to_datetime(df_day_stats["day"])
@@ -76,10 +80,5 @@ final_chart = bars + text
 
 st.altair_chart(final_chart, use_container_width=True)
 
-# display affected stations -----------------------------------
-st.subheader("List of affected stations in the last 24 hours")
-st.dataframe(df_affected_stations, use_container_width=True)
 
 
-#for row in df_map_data.itertuples():
-#    st.write(f"date: {row.station_code}, disruption_count: {row.involved_disruptions}, level: {row.level}, station_type: {row.station_type}, location: {row.location}")

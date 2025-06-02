@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 
 st.title("NS disruption data")
 
-@st.cache_data()
+@st.cache_data(ttl=7200)
 def fetch_data():
     logging.info("fetch_data was called")
     conn = st.connection("postgresql", type="sql")
@@ -34,27 +34,25 @@ m = folium.Map(location=[52.552474, 5.188491], zoom_start=8, tiles="Cartodb Posi
 # add all map points
 for row in df_map_data.itertuples():
     location = shapely.from_wkb(row.location)
-    #print(location.x)
+    radius = 200 + (100 * row.involved_disruptions)
+    weight = -1 + (row.involved_disruptions)
+
     logging.info(row.location)
     folium.Circle(
         location=[location.x, location.y],
-        radius=200,
+        radius=radius,
         color="red",
-        weight=2,
+        weight=weight,
         fill=True,
         fill_color="red",
         fill_opacity=0.6,
-        tooltip=row.name,
+        tooltip=f"<b>{row.name}</b><br/><i>count disruptions</i>: {row.involved_disruptions}<br/><i>effects</i>: {row.level}<br/><i>station type</i>: {row.station_type}",
     ).add_to(m)
 
 # render map
 st.subheader("Affected stations in the last 24 hours")
 with st.container(height=800):
     st_data = st_folium(m, use_container_width=True, height=700)
-
-# display affected stations -----------------------------------
-st.subheader("List of affected stations in the last 24 hours")
-st.dataframe(df_affected_stations, use_container_width=True)
 
 # render stats last 30d on day level ---------------------------------------
 st.subheader("Number of disruptions per day")
@@ -79,6 +77,12 @@ text = alt.Chart(df_day_stats).mark_text(dx=-12, dy=0, color="black", baseline="
 final_chart = bars + text
 
 st.altair_chart(final_chart, use_container_width=True)
+
+
+# display affected stations -----------------------------------
+st.subheader("List of affected stations in the last 24 hours")
+df_affected_stations.rename(columns={"involved_disruptions": "Count involvement disruptions"})
+st.dataframe(df_affected_stations, use_container_width=True)
 
 
 

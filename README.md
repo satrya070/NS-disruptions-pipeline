@@ -10,3 +10,4 @@ I had to use a setup that was based on free tools as it’s just a personal proj
 <b>Database:</b> PostgreSQL is used here as it's a well known relational database that I’m familiar with.<br/>
 <b>Orchestration and ETL:</b> Github actions is a nice tool with free tier options which in this case I used to perform ETL. In this case the ETL is in the form of Python scripts fetching data from the API, transforming the data, and loading it into the database. I also used Github actions to orchestrate the data load, fetching and processing the data every 3 hours on 12-3-6-9. <br/>
 <b>Frontend:</b> I used Streamlit as a front-end, which is a tool that can be used to easily setup web based applications like dashboards, and load data from something like a Postgres database.
+<b>Data monitoring: </b> This is yet to be implmented, but will be consist of ...

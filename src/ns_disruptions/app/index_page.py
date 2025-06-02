@@ -37,7 +37,6 @@ for row in df_map_data.itertuples():
     radius = 200 + (100 * row.involved_disruptions)
     weight = -1 + (row.involved_disruptions)
 
-    logging.info(row.location)
     folium.Circle(
         location=[location.x, location.y],
         radius=radius,

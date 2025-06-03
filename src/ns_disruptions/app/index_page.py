@@ -11,9 +11,9 @@ logging.basicConfig(level=logging.INFO)
 
 
 st.title("NS disruption data")
-st.markdown("This is the front-end of a project done on disruption on trains from the [NS api](https://apiportal.ns.nl/). \
-            The project can be found in [this](https://github.com/satrya070/NS-disruptions-pipeline) repository. Note that emphasis of the project was on engineering the data pipeline, rather than the dashboard and analysis. \
-            This app is just to show the data and some simple aggregations. Don't use this as factual source as these aggregations could contain errors.")
+st.markdown("This is the front-end of a project done on disruption on trains from the [NS api](https://apiportal.ns.nl/)." \
+            "The project can be found in [this](https://github.com/satrya070/NS-disruptions-pipeline) repository. Note that emphasis of the project was on engineering the data pipeline, rather than the dashboard and analysis." \
+            "This app is just to show the data and some simple aggregations. Don't use this as factual source as these aggregations could contain errors.")
 
 @st.cache_data(ttl=7200)
 def fetch_data():

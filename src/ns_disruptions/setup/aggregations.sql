@@ -43,3 +43,10 @@ GROUP BY dd."day", dd."type"
 -- 3.0 all time(last 30 days or group per month) : (total disruption, % type disruption, avg/high/low per disruptions per day, avg/high/low impact)
 -- e4.0 per province?
 -- e5.0 stations based?
+
+
+--- order of refreshing views
+REFRESH MATERIALIZED VIEW ns.disruptions_24h;
+REFRESH MATERIALIZED VIEW ns.affected_stations_24h;
+REFRESH MATERIALIZED VIEW ns.day_aggregations;
+REFRESH MATERIALIZED VIEW ns.map_data;

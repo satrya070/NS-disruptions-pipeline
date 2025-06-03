@@ -2,12 +2,20 @@ import psycopg2
 import os
 
 from dataclasses import astuple
-from ns_disruptions.config import DISRUPTION_FIELDS
 from ns_disruptions.apis.ns_api import nsAPI
 from ns_disruptions.ns_util import process_ns_data
 from ns_disruptions.data_interfaces.ns_dataclasses import DisruptionData, DisruptionStationLink
 
 class ETL:
+    def __init__(self):
+        self.conn = psycopg2.connect(
+            host=os.environ["PGHOST"],
+            port=os.environ["PGPORT"],
+            user=os.environ["PGUSER"],
+            password=os.environ["PGPASSWORD"],
+            dbname=os.environ["PGDATABASE"]
+        )
+
     def extract_data(self) -> list[dict]:
         """
         extracts the data from the api and list of raw disruption data
@@ -45,25 +53,39 @@ class ETL:
         "VALUES (%s, %s, %s, %s)"
 
         try:
-            conn = psycopg2.connect(
-                host=os.environ["PGHOST"],
-                port=os.environ["PGPORT"],
-                user=os.environ["PGUSER"],
-                password=os.environ["PGPASSWORD"],
-                dbname=os.environ["PGDATABASE"]
-            )
-
-            cursor = conn.cursor()
+            cursor = self.conn.cursor()
             cursor.executemany(insert_disruption_query, disruption_insert_data)
             cursor.executemany(insert_disruption_station_link_query, disrupted_stations_insert_data)
-            conn.commit()
+            self.conn.commit()
 
             print("Data inserted succesfully")
             
         except Exception as e:
             print("Data insert failed: ", e)
-            conn.rollback()
+            self.conn.rollback()
 
         finally:
             cursor.close()
-            conn.close()
+
+    def refresh_data_views(self):
+        """
+        refreshed the materialized views to take in the latest data from tables
+        """
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("REFRESH MATERIALIZED VIEW ns.disruptions_24h;")
+            cursor.execute("REFRESH MATERIALIZED VIEW ns.affected_stations_24h;")
+            cursor.execute("REFRESH MATERIALIZED VIEW ns.day_aggregations;")
+            cursor.execute("REFRESH MATERIALIZED VIEW ns.map_data;")
+
+            self.conn.commit()
+
+            print("Data refreshed succesfully")
+            
+        except Exception as e:
+            print("Data insert failed: ", e)
+            self.conn.rollback()
+
+        finally:
+            cursor.close()
+            self.conn.close()  # this assumes this function is called as the last data process

@@ -11,6 +11,9 @@ logging.basicConfig(level=logging.INFO)
 
 
 st.title("NS disruption data")
+st.markdown("This is the front-end of a project done on disruption on trains from the [NS api](https://apiportal.ns.nl/). \
+            The project can be found in [this](https://github.com/satrya070/NS-disruptions-pipeline) repository. Note that emphasis of the project was on engineering the data pipeline, rather than the dashboard and analysis. \
+            This app is just to show the data and some simple aggregations. Don't use this as factual source as these aggregations could contain errors.")
 
 @st.cache_data(ttl=7200)
 def fetch_data():
@@ -29,7 +32,7 @@ def fetch_data():
 df_map_data, df_day_stats, df_affected_stations = fetch_data()
 
 # init map
-m = folium.Map(location=[52.552474, 5.188491], zoom_start=8, tiles="Cartodb Positron")
+m = folium.Map(location=[52.067968, 5.111784], zoom_start=9, tiles="Cartodb Positron")
 
 # add all map points
 for row in df_map_data.itertuples():
@@ -62,7 +65,7 @@ df_day_stats["day"] = df_day_stats["day"].dt.strftime("%Y-%m-%d")
 bars = alt.Chart(df_day_stats).mark_bar().encode(
         y=alt.Y("day:N", title="Date"),
         x=alt.X("count:Q", stack="zero", title="Number of disruptions"),
-        color=alt.Color("type:N", title="Type")
+        color=alt.Color("type:N", title="Type", scale=alt.Scale(range=["#cf4553", "#1f77b4", "#9cc7fa"]))
 )
 
 # text layer

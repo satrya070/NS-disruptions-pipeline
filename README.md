@@ -3,8 +3,12 @@ This project is a simple end-to-end data pipeline that automatically collects da
 
 The NS api was chosen as it’s something that everybody in the Netherlands will know. Note that as it’s just a personal project, aggregations could have errors as I’m not deeply involved with the data, and so possibly could have interpreted things wrongly.
 
+![application map image](images/app-image.png)
+
 ## Design
 I had to use a setup that was based on free tools as it’s just a personal project, so I had to be more creative in terms of using tooling, which means less common data engineering tools in this project.
+
+![application map image](images/ns-disruptions-design.png)
 
 <b>Data provider:</b> The official NS disruptions API. <br/>
 <b>Database:</b> PostgreSQL is used here as it's a well known relational database that I’m familiar with.<br/>

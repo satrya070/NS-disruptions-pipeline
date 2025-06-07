@@ -74,3 +74,7 @@ def monitor_db():
     finally:
         # make sure pg conn closes regardless of exceptions
         conn.close()
+
+
+if __name__ == "__main__":
+    monitor_db()

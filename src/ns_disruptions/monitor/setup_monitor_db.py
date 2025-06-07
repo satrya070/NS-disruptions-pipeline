@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
     try:
         # create all the monitoring tables
-        duckconn.sql("CREATE TABLE queries_info (query TEXT, calls INTEGER, total_exec_time FLOAT, mean_exec_time FLOAT, rows INTEGER);")
-        duckconn.sql("CREATE TABLE database_size (size_bytes INTEGER);")
+        duckconn.sql("CREATE TABLE queries_info (query TEXT, calls INTEGER, total_exec_time FLOAT, mean_exec_time FLOAT, rows INTEGER, recording_date TIMESTAMP);")
+        duckconn.sql("CREATE TABLE database_size (size_bytes INTEGER, recording_date TIMESTAMP);")
 
         duckconn.close()
     except Exception as e:

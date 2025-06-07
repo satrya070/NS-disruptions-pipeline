@@ -5,6 +5,8 @@ import duckdb
 import pandas as pd
 import logging
 
+MONITORING_DB = "monitoring.db"
+
 
 def monitor_db():
     """
@@ -47,11 +49,11 @@ def monitor_db():
             tables_sizes_data = cursor.fetchall()
 
             # download duckdb from s3
-            #s3_client = boto3.client("s3")
-            #s3_client.download_file()
+            s3_client = boto3.client("s3")
+            s3_client.download_file("ns-disruptions", f"monitoring/{MONITORING_DB}", f"/tmp/{MONITORING_DB}")
             
             # update duck db table
-            duckconn = duckdb.connect("/tmp/test6.db")
+            duckconn = duckdb.connect(f"/tmp/{MONITORING_DB}")
 
             # insert all monitor data in duckdb
             duckconn.executemany("INSERT INTO queries_info VALUES(?, ?, ?, ?, ?, ?)", queries_info_data)
@@ -62,6 +64,7 @@ def monitor_db():
             print("duckdb succesfully updated with monitoring data.")
 
             # upload updated duck db
+            s3_client.upload_file(f"/tmp/{MONITORING_DB}", "ns-disruptions", f"monitoring/{MONITORING_DB}")
             print("duckdb succesfully uploaded to s3.")
 
     except Exception as e:

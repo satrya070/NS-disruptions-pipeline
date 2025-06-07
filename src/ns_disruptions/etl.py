@@ -63,6 +63,8 @@ class ETL:
         except Exception as e:
             print("Data insert failed: ", e)
             self.conn.rollback()
+            self.conn.close()
+            raise e
 
         finally:
             cursor.close()

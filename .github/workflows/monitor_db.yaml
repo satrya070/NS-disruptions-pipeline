@@ -1,4 +1,4 @@
-name: Update disruption data
+name: Monitor database
 
 on:
   schedule:

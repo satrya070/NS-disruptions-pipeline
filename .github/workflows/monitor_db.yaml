@@ -1,8 +1,8 @@
 name: Monitor database
 
 on:
-  schedule:
-    - cron: '0 21 * * *'  # 21:00 UTC = 23:00 Amsterdam
+  #schedule:
+  #  - cron: '0 21 * * *'  # 21:00 UTC = 23:00 Amsterdam
   workflow_dispatch:  # manual trigger
 
 jobs:
